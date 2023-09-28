@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import Error from "./pages/Page404";
 import Header from "./components/Header";
-import Epoca from "./pages/Epoca";
+import Post from "./pages/Post";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Categoria from "./pages/Categoria";
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/sobre' element={<Sobre/>}/>
+        <Route path='posts/:id' element={<Post/>}/>
+        <Route path='categoria/:id/*' element={<Categoria/>}/>
         <Route path='*' element={<Error/>}/>
-        <Route path='posts/3' element={<Epoca/>}/>
+        
       </Routes>
     </Router>
   );
